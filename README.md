@@ -1,5 +1,7 @@
 # Projeto de Site - Portfolio de Dashboards Power BI
 ---
+![icons8-github-96](https://github.com/ivansorgi/powerbi-projetos/assets/131409066/ba97b812-294b-4c39-8eeb-60fbee5be0ae)![icons8-download-via-browser-64](https://github.com/ivansorgi/powerbi-projetos/assets/131409066/9d8d8612-efa8-480c-8a96-4763e900a4ee) Link para o repositório online [aqui](https://ivansorgi.github.io/powerbi-projetos/)!
+
 
 ## Introdução
 Este projeto consiste em criar um site que funcione como um portfólio para exibir diversos dashboards desenvolvidos no Power BI. O objetivo é demonstrar minha experiência e habilidades em criar análises visuais interativas, relatórios e painéis informativos utilizando a ferramenta Power BI da Microsoft.
