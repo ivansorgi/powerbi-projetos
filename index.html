@@ -50,20 +50,20 @@
 
     .artigos {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+      flex-direction: column; /* Alteração para exibir os artigos um abaixo do outro */
+      align-items: center; /* Centraliza os artigos horizontalmente */
       padding: 30px;
     }
 
     article {
-      flex-basis: 40%;
-      margin-bottom: 30px;
+      width: 100%; /* Ocupa toda a largura do container */
       background-color: #222;
       padding: 20px;
       text-align: center;
       border-radius: 5px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       transition: box-shadow 0.3s ease;
+      margin-bottom: 20px; /* Espaço entre os artigos */
     }
 
     article:hover {
@@ -85,18 +85,15 @@
       line-height: 1.6;
     }
 
-    img {
-      display: block;
-      margin: 20px auto;
-      max-width: 100%;
-      height: auto;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    a {
+      color: #af72ff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: opacity 0.3s ease;
     }
 
-    /* Efeito profissional no hover para as imagens dos artigos */
-    article:hover img {
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-      transform: translateY(-5px);
+    a:hover {
+      opacity: 0.8;
     }
 
     /* Rodapé */
@@ -133,12 +130,7 @@
 </head>
 <body>
   <header>
-    <div class="icones-topo" style="left: 10px;">
-      <img src="icone1.jpg" alt="Ícone 1">
-    </div>
-    <div class="icones-topo" style="right: 10px;">
-      <img src="icone2.jpg" alt="Ícone 2">
-    </div>
+    <!-- ... ícones ... -->
     <h1>Projetos Power BI</h1>
   </header>
 
@@ -150,13 +142,13 @@
     <article>
       <h2>Dashboard 1</h2>
       <p>Explicação sobre o Dashboard 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <img src="dashboard1.pdf" alt="Dashboard 1">
+      <a href="dashboard1.pdf" target="_blank">Ver PDF</a>
     </article>
 
     <article>
       <h2>Dashboard 2</h2>
       <p>Explicação sobre o Dashboard 2. Nullam non purus in libero vestibulum iaculis.</p>
-      <img src="dashboard2.pdf" alt="Dashboard 2">
+      <a href="dashboard2.pdf" target="_blank">Ver PDF</a>
     </article>
 
     <!-- Adicione mais artigos aqui (até 10) -->
@@ -174,3 +166,4 @@
   </footer>
 </body>
 </html>
+
