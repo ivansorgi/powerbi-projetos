@@ -2,13 +2,69 @@
 <html>
 <head>
   <title>Projetos Power BI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    
+    /* Estilos gerais */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #333;
       color: #fff;
+    }
+
+    /* Cabeçalho */
+    header {
+      text-align: center;
+      background-color: #444;
+      padding: 20px 0;
+      position: relative;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      color: #af72ff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    /* Estilos para ajustar a visualização em dispositivos móveis */
+    @media only screen and (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .descricao {
+        font-size: 16px;
+      }
+
+      .indice-titulo {
+        font-size: 20px;
+      }
+
+      .indice-botao {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+
+      article {
+        padding: 10px;
+      }
+
+      /* Ajuste para evitar a barra horizontal */
+      header {
+        padding: 10px 0;
+      }
+
+      /* Ajuste o tamanho do PDF exibido em dispositivos móveis */
+      embed {
+        width: 100%;
+        height: auto;
+      }
     }
 
     header {
@@ -255,11 +311,11 @@
 
   <!-- Índice com botões que levam aos artigos usando âncoras -->
   <div>
-    <a href="#artigo-1"><button class="indice-botao" >Dashboard Analitico de Vendas Globais</button></a> <br>
-    <a href="#artigo-2"><button class="indice-botao" >Dashboard de Vendas, Custo, Margem de Lucro e KPI</button></a> <br>
+    <a href="#artigo-1"><button class="indice-botao" >Dashboard Analitico de Vendas Globais</button></a>
+    <a href="#artigo-2"><button class="indice-botao" >Dashboard de Vendas, Custo, Margem de Lucro e KPI</button></a> 
     <!-- Adicione mais botões para os outros artigos aqui -->
-    <a href="#artigo-3"><button class="indice-botao" >Mini-Projeto 1 / Análise de Campanhas de Marketing no Power BI</button></a> <br>
-    <a href="#artigo-4"><button class="indice-botao" >Mini-Projeto 2 - Dashboard Comercial - Performance de Vendas (Em Construção)</button></a> <br> <br> <br> <br>
+    <a href="#artigo-3"><button class="indice-botao" >Mini-Projeto 1 / Análise de Campanhas de Marketing no Power BI</button></a> 
+    <a href="#artigo-4"><button class="indice-botao" >Mini-Projeto 2 - Dashboard Comercial - Performance de Vendas (Em Construção)</button></a> <br> <br> <br> <br> 
   
     <!-- Adicione mais botões para os outros artigos aqui -->
   </div>
@@ -280,8 +336,8 @@
 
     <article id="artigo-2">
       <h2>Dashboard de Vendas, Custo, Margem de Lucro e KPI</h2>
-      <p>Este dashboard foi construído através de 4 arquivos.csv, onde foi feita a limpeza e tratamentos dos dados usando o Power Query, modelagem de dados interligando as 4 tabelas, um KPI e aplicação de DAX para criação de duas novas colunas. Para ser feito, foi baseado em 5 perguntas: <br></p>
-      <p>1- Qual foi o total de valor venda considerando cada modo de envio dos pedidos? <br><br>2- Quais mercados tiveram o maior custo médio de envio dos produtos vendidos? <br><br>3- A empresa tem como objetivo (meta) manter uma média de 350 para o valor de venda todos os meses. Mostre um indicador (KPI–Key Performance Indicator) com o valor médio de venda. A empresa ficou abaixo ou acima da meta no mês de Abril/2014? <br><br>4- Considere que o lucro é equivalente a: valor venda - custo envio. Qual categoria de produto apresentou maior lucro médio. <br><br>5- Qual foi o comportamento da margem de lucro ao longo do tempo? Considere a margem de lucro como o lucro dividido pelo valor venda.</p>
+      <p>Este dashboard foi construído através de 4 arquivos.csv, onde foi feita a limpeza e tratamentos dos dados usando o Power Query, <br> modelagem de dados interligando as 4 tabelas, um KPI e aplicação de DAX para criação de duas novas colunas. Para ser feito, foi baseado em 5 perguntas: <br></p>
+      <p>1- Qual foi o total de valor venda considerando cada modo de envio dos pedidos? <br><br>2- Quais mercados tiveram o maior custo médio de envio dos produtos vendidos? <br><br>3- A empresa tem como objetivo (meta) manter uma média de 350 para o valor de venda todos os meses. <br> Mostre um indicador (KPI–Key Performance Indicator) com o valor médio de venda. A empresa ficou abaixo ou acima da meta no mês de Abril/2014? <br><br>4- Considere que o lucro é equivalente a: valor venda - custo envio. Qual categoria de produto apresentou maior lucro médio. <br><br>5- Qual foi o comportamento da margem de lucro ao longo do tempo? Considere a margem de lucro como o lucro dividido pelo valor venda.</p>
       <embed src="dashboard2.pdf" type="application/pdf" width="100%" height="650px" /> <br> <br>
       <a href="https://github.com/ivansorgi/powerbi-projetos" target="_blank" class="btn">Download Dashboard On GitHub</a> <br> <br>
     </article>
@@ -290,24 +346,22 @@
     <article id="artigo-3">
       <h2>Mini-Projeto 1 / Análise de Campanhas de Marketing no Power BI </h2>
       <p>Este Mini-Projeto traz uma breve introdução à análise de campanhas de
-        Marketing com o Power BI.
-        São 4 Dashboards, mais de 10 elementos visuais, customizações, formatações,
-        correções nos dados e diferentes recursos do Power BI aplicados.
-        Os dados foram customizados e representam informações sobre
+        Marketing com o Power BI. <br>São 4 Dashboards, mais de 10 elementos visuais, customizações, formatações, 
+        correções nos dados <br> e diferentes recursos do Power BI aplicados.
+        Os dados foram customizados e representam informações <br> sobre
         clientes e campanhas de Marketing realizadas por uma empresa.
-        Para este Mini-Projeto criarei diversos relatórios que serão divididos em 4 visões: <br>
+        Para este Mini-Projeto <br> criarei diversos relatórios que serão divididos em 4 visões: <br>
        <br> • Visão do Cliente
         <br>• Visão do Comportamento de Compra do Cliente
         <br>• Visão da Performance das Campanhas de Marketing
        <br> • Visão dos Padrões de Compra no Ponto de Venda (País) <br><br>
-        Vou criar análises, responder perguntas de negócio, observar os dados por diferentes ângulos, corrigir os dados, calcular métricas e extrair insights para ajudar os tomadores de decisão.</p>
+        Vou criar análises, responder perguntas de negócio, observar os dados por diferentes ângulos, <br> corrigir os dados, calcular métricas e extrair insights para ajudar os tomadores de decisão.</p>
         <embed src="dashboard3.pdf" type="application/pdf" width="100%" height="650px" /> <br> <br>
       <a href="https://github.com/ivansorgi/powerbi-projetos" target="_blank" class="btn">Download Dashboard On GitHub</a> <br> <br>
     </article>
       <article id="artigo-4">
          <h2>Mini-Projeto 2 - Dashboard Comercial - Performance de Vendas (Em Construção)</h2>
-          <p>Esse Mini-Projeto traz uma breve introdução à análise de dados comerciais com o Power BI. <br>
-          Vou construir diversas visualizações para compreender a performance de vendas de uma empresa fictícia por diferentes ângulos. Usarei dados fictpicios para esse projeto. Integrarei recursos do Power BI como Narrativa Inteligente, Principais Influenciadores, Gráfico de Faixas e criação de menu para índice do Dashboard.</p>
+          <p>Esse Mini-Projeto traz uma breve introdução à análise de dados comerciais com o Power BI. Vou construir diversas visualizações <br>para compreender a performance de venda de uma empresa fictícia  por diferentes ângulos. Usarei dados fictícios para esse projeto. <br> Integrarei recursos do Power BI como Narrativa Inteligente, Principais Influenciadores, Gráfico de Faixas e criação de Menu para índice do Dashboard.</p>
          
          <br> <br>
       <a href="https://github.com/ivansorgi/powerbi-projetos" target="_blank" class="btn">Download Dashboard On GitHub</a> <br> <br>
