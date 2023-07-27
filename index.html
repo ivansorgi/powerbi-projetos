@@ -95,12 +95,37 @@
       font-size: 20px;
       line-height: 1.6;
     }
+/* Novo estilo para os botões do índice */
+    .indice-botao {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #af72ff;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin: 5px;
+      cursor: pointer;
+    }
 
-    .artigos {
-      display: flex;
-      flex-direction: column; /* Alteração para exibir os artigos um abaixo do outro */
-      align-items: center; /* Centraliza os artigos horizontalmente */
-      padding: 30px;
+    .indice-botao:hover {
+      background-color: #8a41cc;
+      transform: translateY(-3px);
+    }
+
+    /* Estilos dos artigos */
+    .artigo {
+      display: none;
+    }
+
+    .artigo.mostrar {
+      display: block;
+    }
+
+    /* Adiciona um espaçamento após o índice */
+    .espaco-apos-indice {
+      margin-top: 20px;
     }
 
     article {
@@ -215,7 +240,18 @@
   <div class="descricao">
     <p>Bem-vindo ao meu portfólio de projetos Power BI, me chamo Ivan e aqui você encontrará dashboards desenvolvidos por mim, apresentados em formato PDF (optei por esse tipo de visualização pois para uma aplicação embed teria que ter um recurso exclusivo para contas corporativas no Power BI). Cada dashboard é acompanhado de uma explicação sobre ele e as tecnologias utilizadas. O site foi desenvolvido por mim em HTML:5 e CSS, com links de contato integrados. Aproveite!</p>
   </div>
-
+ 
+  <h2>Índice de Artigos</h2>
+  <!-- Índice com botões que levam aos artigos usando âncoras -->
+  <div>
+    <button class="indice-botao" onclick="exibirArtigo(1)">Dashboard Analitico de Vendas Globais</button>
+    <button class="indice-botao" onclick="exibirArtigo(2)">Dashboard de Vendas, Custo, Margem de Lucro e KPI</button>
+    <!-- Adicione mais botões para os outros artigos aqui -->
+    <button class="indice-botao" onclick="exibirArtigo(3)">Mini-Projeto 1 / Análise de Campanhas de Marketing no Power BI</button>
+    <button class="indice-botao" onclick="exibirArtigo(4)">Mini-Projeto 2 - Dashboard Comercial - Performance de Vendas (Em Construção)</button>
+    <!-- Adicione mais botões para os outros artigos aqui -->
+  </div>
+  
   <div class="artigos">
     <article>
       <h2>Dashboard Analitico de Vendas Globais</h2>
