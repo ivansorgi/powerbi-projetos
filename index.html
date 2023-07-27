@@ -95,6 +95,16 @@
       font-size: 20px;
       line-height: 1.6;
     }
+    /* Novo estilo para o título do índice */
+    h2.indice-titulo {
+      font-size: 24px;
+      color: #af72ff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center; /* Centraliza o título */
+      margin: 30px 0; /* Espaçamento entre o título e os botões do índice */
+    }
+
 /* Novo estilo para os botões do índice */
     .indice-botao {
       display: inline-block;
@@ -241,7 +251,8 @@
     <p>Bem-vindo ao meu portfólio de projetos Power BI, me chamo Ivan e aqui você encontrará dashboards desenvolvidos por mim, apresentados em formato PDF (optei por esse tipo de visualização pois para uma aplicação embed teria que ter um recurso exclusivo para contas corporativas no Power BI). Cada dashboard é acompanhado de uma explicação sobre ele e as tecnologias utilizadas. O site foi desenvolvido por mim em HTML:5 e CSS, com links de contato integrados. Aproveite!</p>
   </div>
  
-  <h2>Índice de Artigos</h2>
+  <h2 class="indice-titulo">Índice de Artigos</h2>
+
   <!-- Índice com botões que levam aos artigos usando âncoras -->
   <div>
     <button class="indice-botao" onclick="exibirArtigo(1)">Dashboard Analitico de Vendas Globais</button>
