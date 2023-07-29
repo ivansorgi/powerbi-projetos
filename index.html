@@ -6,36 +6,45 @@
   <style>
     /* Estilos gerais */
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #333;
-      color: #fff;
-      position: relative;
-    }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
 
-    /* Cabeçalho */
-    header {
-      text-align: center;
-      background-color: #444;
-      padding: 25px 0;
-      position: relative;
-    }
+/* Cabeçalho */
+header {
+  text-align: center;
+  background-color: #444;
+  padding: 25px 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex; /* Adiciona flexbox para tornar o cabeçalho flexível */
+  align-items: center; /* Centraliza verticalmente os elementos do cabeçalho */
+}
 
-    h1 {
-      margin: 0;
-      font-size: 36px;
-      color: #af72ff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      position: absolute;
-      top: 0px;
-      left: 300px;
-      cursor: pointer;
-    }
+
+h1 {
+  margin: 0;
+  font-size: 3vw; /* Tamanho do título ajustado à largura da tela */
+  color: #af72ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  flex: 1; /* Ocupa o espaço restante no cabeçalho */
+  position: fixed;
+  top: 0;
+  left: 20%;
+}
+
 
     /* Efeito de sublinhado no título */
-    h1::before {
+h1::before {
       content: '';
       position: absolute;
       bottom: -5px;
