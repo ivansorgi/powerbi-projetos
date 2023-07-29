@@ -4,7 +4,6 @@
   <title>Projetos Power BI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    
     /* Estilos gerais */
     body {
       font-family: Arial, sans-serif;
@@ -12,13 +11,14 @@
       padding: 0;
       background-color: #333;
       color: #fff;
+      position: relative;
     }
 
     /* Cabeçalho */
     header {
       text-align: center;
       background-color: #444;
-      padding: 20px 0;
+      padding: 25px 0;
       position: relative;
     }
 
@@ -28,60 +28,10 @@
       color: #af72ff;
       text-transform: uppercase;
       letter-spacing: 2px;
-      position: relative;
+      position: absolute;
+      top: 0px;
+      left: 300px;
       cursor: pointer;
-    }
-
-    /* Estilos para ajustar a visualização em dispositivos móveis */
-    @media only screen and (max-width: 600px) {
-      h1 {
-        font-size: 28px;
-      }
-
-      .descricao {
-        font-size: 16px;
-      }
-
-      .indice-titulo {
-        font-size: 20px;
-      }
-
-      .indice-botao {
-        font-size: 14px;
-        padding: 8px 15px;
-      }
-
-      article {
-        padding: 10px;
-      }
-
-      /* Ajuste para evitar a barra horizontal */
-      header {
-        padding: 10px 0;
-      }
-
-      /* Ajuste o tamanho do PDF exibido em dispositivos móveis */
-      embed {
-        width: 100%;
-        height: auto;
-      }
-    }
-
-    header {
-      text-align: center;
-      background-color: #444;
-      padding: 20px 0;
-      position: relative;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 36px;
-      color: #af72ff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      position: relative; /* Adiciona posição relativa para os efeitos */
-      cursor: pointer; /* Adiciona um cursor para indicar que é clicável */
     }
 
     /* Efeito de sublinhado no título */
@@ -101,20 +51,37 @@
     h1:hover::before {
       opacity: 1;
     }
-
-    .icones-topo {
-      position: absolute;
-      top: 10px;
-    }
-
-    .icones-topo img {
-      display: inline-block;
-      width: 30px;
-      height: 30px;
-      margin: 0 10px;
+    /* Estilos do botão "Voltar ao Topo" */
+    .btn-voltar-topo {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      background-color: #af72ff;
+      color: #fff;
+      border: none;
+      outline: none;
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
       cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: none;
     }
 
+    .btn-voltar-topo::before {
+      content: "\2191"; /* Código do ícone de seta para cima */
+      font-size: 24px;
+    }
+
+    .btn-voltar-topo:hover {
+      background-color: #8a41cc;
+    }
+
+    /* Mostra o botão quando a página é rolada para baixo */
+    .btn-voltar-topo.mostrar {
+      display: block;
+    }
     /* Novo estilo para os logos no título */
     .logo-esquerda {
       position: absolute;
@@ -143,6 +110,36 @@
       opacity: 1;
     }
 
+    .icones-topo {
+      display: flex;
+      align-items: center;
+    }
+
+    .icones-topo img {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin: 0 5px;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .icones-topo img:hover {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    /* Estilos específicos para os logos da esquerda */
+    .logo-esquerda {
+      margin-right: 10px;
+    }
+
+    /* Estilos específicos para os logos da direita */
+    .logo-direita {
+      margin-right: 10px;
+    }
+
     .descricao {
       max-width: 800px;
       margin: 0 auto;
@@ -151,17 +148,18 @@
       font-size: 20px;
       line-height: 1.6;
     }
+
     /* Novo estilo para o título do índice */
     h2.indice-titulo {
       font-size: 24px;
       color: #af72ff;
       text-transform: uppercase;
       letter-spacing: 1px;
-      text-align: center; /* Centraliza o título */
-      margin: 30px 0; /* Espaçamento entre o título e os botões do índice */
+      text-align: center;
+      margin: 30px 0;
     }
 
-/* Novo estilo para os botões do índice */
+    /* Novo estilo para os botões do índice */
     .indice-botao {
       display: inline-block;
       padding: 10px 20px;
@@ -180,6 +178,28 @@
       transform: translateY(-3px);
     }
 
+    /* Estilos do botão */
+    #btnVoltarTopo {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 24px;
+      background-color: #8e44ad;
+      color: #fff;
+      border: none;
+      outline: none;
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #btnVoltarTopo:hover {
+      background-color: #a569bd;
+    }
+
     /* Estilos dos artigos */
     .artigo {
       display: none;
@@ -189,20 +209,19 @@
       display: block;
     }
 
-    /* Adiciona um espaçamento após o índice */
     .espaco-apos-indice {
       margin-top: 20px;
     }
 
     article {
-      width: 100%; /* Ocupa toda a largura do container */
+      width: 100%;
       background-color: #222;
       padding: 20px;
       text-align: center;
       border-radius: 5px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       transition: box-shadow 0.3s ease;
-      margin-bottom: 20px; /* Espaço entre os artigos */
+      margin-bottom: 20px;
     }
 
     article:hover {
@@ -291,18 +310,19 @@
 </head>
 <body>
   <header>
-    <!-- Códigos anteriores ... -->
-    <div class="logo-esquerda">
-      <img src="logo_left1.png" alt="Logo Esquerda 1">
-      <img src="logo_left2.png" alt="Logo Esquerda 2">
-      <img src="logo_left3.png" alt="Logo Esquerda 3">
-    </div>
-    <div class="logo-direita">
-      <img src="logo_right1.png" alt="Logo Direita 1">
-      <img src="logo_right2.png" alt="Logo Direita 2">
-      <img src="logo_right3.png" alt="Logo Direita 3">
-    </div>
+    <div class="icones-topo">
+      <div class="logo-esquerda">
+        <img src="logo_left1.png" alt="Logo Esquerda 1">
+        <img src="logo_left2.png" alt="Logo Esquerda 2">
+        <img src="logo_left3.png" alt="Logo Esquerda 3">
+      </div>
+      <div class="logo-direita">
+        <img src="logo_right1.png" alt="Logo Direita 1">
+        <img src="logo_right2.png" alt="Logo Direita 2">
+        <img src="logo_right3.png" alt="Logo Direita 3">
+      </div>
     <h1>Projetos Power BI - Ivan R. Sorgi</h1>
+    
   </header>
 
   <div class="descricao">
@@ -313,11 +333,12 @@
 
   <!-- Índice com botões que levam aos artigos usando âncoras -->
   <div>
-    <a href="#artigo-1"><button class="indice-botao" >Dashboard Analitico de Vendas Globais</button></a>
-    <a href="#artigo-2"><button class="indice-botao" >Dashboard de Vendas, Custo, Margem de Lucro e KPI</button></a> 
+    <a href="#artigo-1"><button class="indice-botao" >DASHBOARD ANALÍTICO DE VENDAS</button></a>
+    <a href="#artigo-2"><button class="indice-botao" >DASHBOARD DE VENDAS, CUSTO, MARGEM DE LUCRO e KPI</button></a> 
     <!-- Adicione mais botões para os outros artigos aqui -->
-    <a href="#artigo-3"><button class="indice-botao" >Mini-Projeto 1 / Análise de Campanhas de Marketing no Power BI</button></a> 
-    <a href="#artigo-4"><button class="indice-botao" >Mini-Projeto 2 - Dashboard Comercial - Performance de Vendas (Em Construção)</button></a> <br> <br> <br> <br> 
+    <a href="#artigo-3"><button class="indice-botao" >MINI-PROJETO 1 / ANÁLISE DE CAMPANHAS DE MARKETING NO POWER BI</button></a> 
+    <a href="#artigo-4"><button class="indice-botao" >MINI-PROJETO 2 - DASHBOARD COMERCIAL - PERFORMANCE DE VENDAS (Em Construção)</button></a> 
+    <a href="#artigo-5"><button class="indice-botao" >MINI-PROJETO 3 - ANÁLISE DE DADOS DE RH EM POWER BI (Em Construção)</button></a> <br> <br> <br> <br> 
   
     <!-- Adicione mais botões para os outros artigos aqui -->
   </div>
@@ -368,6 +389,17 @@
          <br> <br>
       <a href="https://github.com/ivansorgi/powerbi-projetos" target="_blank" class="btn">Download Dashboard On GitHub</a> <br> <br>
       </article>
+      <article id="artigo-5">
+        <h2>Mini-Projeto 3 - Análise de Dados de RH com Power BI (Em Construção)</h2>
+        <p>Este  Mini-Projeto  traz  para  você  uma  breve  introdução  à  análise  de dados de RH (Recursos Humanos) com o Power BI. <br> Durante o projeto irei apresentar alguns outros recursos e funcionalidades do Power BI, como tabela de medidas (DAX) e coluna condicional. <br> O Dashboard criado irá responder às seguintes perguntas de negócio: <br> <br> 1- Qual o total de funcionários atualmente na empresa? <br><br> 2- Qual o tempo médio de experiência dos funcionários (em anos)? <br><br> 3- Qual o total e percentual de funcionários do gênero masculino e feminino? <br><br> 4- Qual a média salarial mensal? <br><br> 5- Qual o total de funcionários por função? <br><br> 6- Qual o percentual defuncionários disponíveis para fazer hora extra? <br><br> 7- Qual o nível de envolvimento dos funcionários no trabalho considerando 4 categorias: Ruim, Baixo, Médio e Alto? <br><br> 8- Este item não estará no Dashboard, mas precisa ser calculado: Qual o total e o percentual de funcionários que devem receber promoção? Considerar a coluna “Anos". <br><br>
+        </p> 
+        <br><br>
+      <a href="https://github.com/ivansorgi/powerbi-projetos" target="_blank" class="btn">Download Dashboard On GitHub</a> <br> <br>
+
+      </article>
+      <button class="btn-voltar-topo" onclick="voltarAoTopo()"></button>
+  </div>
+
     <!-- Adicione mais 7 artigos aqui -->
 
   </div>
@@ -379,7 +411,28 @@
   </div>
 
   <footer>
-    <p>© Ivan Reginaldo Sorgi - 2023</p>
+    <p>© Ivan R. Sorgi - 2023</p>
   </footer>
+  <script>
+    // Função para verificar a posição da página e exibir ou ocultar o botão
+    window.onscroll = function() {
+      exibirOcultarBotao();
+    };
+
+    function exibirOcultarBotao() {
+      var btnVoltarTopo = document.querySelector(".btn-voltar-topo");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        btnVoltarTopo.classList.add("mostrar");
+      } else {
+        btnVoltarTopo.classList.remove("mostrar");
+      }
+    }
+
+    // Função para voltar ao início da página
+    function voltarAoTopo() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
 </body>
 </html>
